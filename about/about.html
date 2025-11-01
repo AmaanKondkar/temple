@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kondkar House - Navbar & Footer Only</title>
+
+<!-- External Links (Keep All) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- Local CSS -->
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="title.css">
+<link rel="stylesheet" href="card.css">
+<link rel="stylesheet" href="video.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="vision.css">
+<link rel="stylesheet" href="village.css">
+<style>
+/* (Optional inline CSS area, kept empty as per request) */
+</style>
+</head>
+
+<body>
+
+<!-- ==============================
+     NAVIGATION BAR (KEEP)
+============================== -->
+<nav>
+  <div class="brand">
+    <img src="logo.png" alt="Logo" />
+    Vithal–Rakhumai
+  </div>
+
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About</a>
+    <a href="../gallery/gallery.html">Gallery</a>
+    <a href="../event/events.html">Event</a>
+    <a href="../donation/donation.html">Donation</a>
+  </div>
+
+  <div class="nav-buttons">
+    <a href="../contact/contact.html">
+      <button class="login-btn">Contact</button>
+    </a>
+  </div>
+
+  <button class="hamburger" onclick="toggleMobileMenu()" id="hamburgerBtn">☰</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About</a>
+    <a href="../gallery/gallery.html">Gallery</a>
+    <a href="../event/events.html">Event</a>
+    <a href="../donation/donation.html">Donation</a>
+    <a href="../contact/contact.html">
+      <button class="login-btn">Contact</button>
+    </a>
+  </div>
+</nav>
+
+
+<!-- ==============================
+     BACKGROUND ANIMATION (KEEP)
+============================== -->
+<div id="animated-bg">
+  <div class="glow"></div>
+  <div class="glow"></div>
+
+
+<!-- (All other sections removed as requested) -->
+<br>
+<br>
+
+<h1 class="section-title">About</h1>
+
+<br>
+<br>
+
+
+<section class="temple-info">
+    <!-- Background video -->
+    <video class="temple-bg-video" autoplay muted loop playsinline>
+      <source src="vid1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay -->
+    <div class="temple-overlay"></div>
+
+    <!-- Foreground content -->
+    <div class="temple-content">
+      <div class="temple-left">
+        <img src="img1.png" alt="Vitthal–Rakhumai Temple">
+      </div>
+      <div class="temple-right">
+        <div class="title">🛕 <span>Vitthal–Rakhumai Temple</span></div>
+        <div class="text">
+          <p>
+            Welcome to the <span class="highlight">Vitthal–Rakhumai Temple</span> in 
+            <span class="highlight">ABC Village</span>, a sacred place of 
+            <span class="highlight">devotion</span>, <span class="highlight">peace</span>, 
+            and <span class="highlight">community</span>. Our temple has been the 
+            <span class="highlight">spiritual heart</span> of the village for over 
+            <span class="highlight">50 years</span>, guiding generations in 
+            <span class="highlight">worship</span> and <span class="highlight">faith</span>.
+          </p>
+
+          <p>
+            We celebrate holy festivals like 
+            <span class="highlight">Kartiki Ekadashi</span> with grand 
+            <span class="highlight">Bhajans</span>, <span class="highlight">Aarti</span>, 
+            and <span class="highlight">Maha Prasad</span>, welcoming devotees from near and far. 
+            The <span class="highlight">temple trust</span> is building a 
+            <span class="highlight">new temple</span> to serve more devotees and preserve our 
+            <span class="highlight">rich spiritual heritage</span>.
+          </p>
+
+          <p>
+            Explore our website to learn about the 
+            <span class="highlight">temple’s history</span>, view 
+            <span class="highlight">festival galleries</span>, check 
+            <span class="highlight">upcoming events</span>, and contribute to our 
+            <span class="highlight">divine mission</span>. Join us in 
+            <span class="highlight">devotion</span>, <span class="highlight">service</span>, 
+            and <span class="highlight">celebration</span> as we keep the 
+            <span class="highlight">light of faith</span> alive in 
+            <span class="highlight">ABC Village</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br>
+  <br>
+
+
+
+
+<section class="about-village">
+  <div class="container">
+    <div class="about-left">
+      <h2><span>About Rajapur Village</span></h2>
+      <p class="auto-text"></p>
+    </div>
+
+    <div class="about-right">
+      <div class="zigzag-images">
+        <div class="frame"><img src="img2.png" alt="ABC Village view" class="img-1"></div>
+        <div class="frame"><img src="img3.jpg" alt="Festival celebration" class="img-2"></div>
+        <div class="frame"><img src="img4.jpg" alt="People of ABC Village" class="img-3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+
+
+
+<!-- ====== ElevateLabs Feature Section (Unique Version) ====== -->
+<section class="fesec">
+  <h2 class="fetit">🪔Our Vision:🪔</h2>
+
+  <div class="fegri">
+    <!-- Card 1 -->
+    <div class="fecar">
+      <div class="feloop">
+        <span>
+🪔</span><span>
+🪔</span><span>
+🪔</span><span>
+🪔</span><span>
+🪔</span>
+      </div>
+      <div class="feico">
+🛕</div>
+      <div class="fetie">Step 1: Explore Internships</div>
+      <div class="fedec">
+        Browse from a wide range of verified internships across tech, design, marketing, and more. Filter by skill, duration, and location to find your perfect fit.
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="fecar">
+      <div class="feloop">
+        <span>🪔</span><span>🪔</span><span>🪔</span><span>🪔</span><span>🪔</span>
+      </div>
+      <div class="feico">
+🛕</div>
+      <div class="fetie">Step 2: Easy Application</div>
+      <div class="fedec">
+        Take a scientifically-designed aptitude test and receive personalized course & career suggestions that match your natural talents and interests.
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="fecar">
+      <div class="feloop">
+        <span>🪔</span><span>🪔</span><span>🪔</span><span>🪔</span><span>🪔</span>
+      </div>
+      <div class="feico">
+🛕</div>
+      <div class="fetie">Step 3: Learn by Doing</div>
+      <div class="fedec">
+        Get hands-on experience with real projects. Work under mentors, attend live sessions, and build a strong portfolio that speaks louder than a resume.
+      </div>
+    </div>
+
+   
+  </div>
+</section>
+
+
+
+
+
+<br>
+  <br>
+
+  <h1 class="section-title">Volunteer </h1>
+
+<section class="animated-cards-section">
+  <!-- Starry background -->
+  <div class="stars-bg">
+    <div class="star" style="top:10%; left:20%; width:2px; height:2px;"></div>
+    <div class="star" style="top:40%; left:80%; width:3px; height:3px;"></div>
+    <div class="star" style="top:70%; left:50%; width:1.5px; height:1.5px;"></div>
+    <!-- Add more stars as needed -->
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <img src="img5.jpg" alt="Cheetah">
+      <div class="info">
+        <h3>🪔 Temple Decoration Team</h3>
+        <p>Help beautify the temple during festivals with flowers, lights, and devotion. Your creativity adds charm to every celebration.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img6.jpg" alt="Mandrill">
+      <div class="info">
+        <h3>🎶 Bhajan & Kirtan Group</h3>
+        <p>Join the devotional music team to spread spiritual energy through soulful bhajans and chants.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img8.jpg" alt="White Tiger">
+      <div class="info">
+        <h3>🍛 Prasad & Food Service</h3>
+        <p>Assist in preparing and distributing Maha Prasad to devotees with love and respect.p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="img7.jpg" alt="White Tiger">
+      <div class="info">
+        <h3>💰 Fundraising & Event Support</h3>
+        <p>Support temple events and donation drives by coordinating activities and engaging the community.<p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+
+
+
+
+</div><!--end-->
+
+<!-- ==============================
+     FOOTER (KEEP)
+============================== -->
+<footer>
+  <!-- Animated Balls -->
+  <div class="ball" style="width: 220px; height: 220px; top: -60px; left: -40px; animation-duration: 15s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; top: 120px; left: 70%; animation-duration: 18s;"></div>
+  <div class="ball" style="width: 250px; height: 250px; top: 250px; left: 30%; animation-duration: 20s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; bottom: 60px; left: 20%; animation-duration: 17s;"></div>
+  <div class="ball" style="width: 200px; height: 200px; bottom: 40px; left: 75%; animation-duration: 19s;"></div>
+
+  <div class="footer-container">
+    <!-- Logo & Contact -->
+    <div class="footer-section">
+      <img src="logo.png" alt="Temple Logo" class="footer-logo">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Rajapur Village, Ratnagiri, Maharashtra</p>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> temple@vitthalrakhumai.org</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-info-circle"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-image"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Gallery</a></li>
+        <li><a href="#"><i class="fas fa-hand-holding-heart"></i> Events</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Donation</a></li>
+        <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h4>Subscribe to Newsletter</h4>
+    <p>Get the latest updates and offers.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+
+  <!-- Temple Message -->
+  <div class="temple-message">
+    “Spreading devotion, peace, and blessings from Vitthal–Rakhumai Temple, Rajapur Village.”
+  </div>
+
+  <!-- Legal -->
+  <div class="footer-legal">
+    <p>© 2025 Vitthal–Rakhumai Temple. All rights reserved. | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ==============================
+     SCRIPTS (KEEP ALL LINKS)
+============================== -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="village.js"></script>
+<script src="nav.js"></script>
+<script src="bg.js"></script>
+<script src="vision.js"></script>
+
+</body>
+</html>

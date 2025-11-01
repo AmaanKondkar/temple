@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kondkar House Hero with 3D Cube (Full BG Animation)</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="maincontent.css">
+<link rel="stylesheet" href="count.css">
+<link rel="stylesheet" href="eventhighlight.css">
+<link rel="stylesheet" href="video.css">
+<link rel="stylesheet" href="review.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="title.css">
+<link rel="stylesheet" href="notificationn.css">
+<style>
+ 
+
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="brand">
+    <img src="logo.png" alt="Logo" />
+    Vithal–Rakhumai
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="about/about.html">About</a>
+    <a href="gallery/gallery.html">Gallery</a>
+    <a href="event/events.html">Events</a>
+    <a href="donation/donation.html">Donation</a>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="login-btn" onclick="location.href='contact/contact.html'">Contact</button>
+  </div>
+
+  <button class="hamburger" onclick="toggleMobileMenu()" id="hamburgerBtn">☰</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="active">Home</a>
+    <a href="about/about.html">About</a>
+    <a href="gallery/gallery.html">Gallery</a>
+    <a href="event/events.html">Events</a>
+    <a href="donation/donation.html">Donation</a>
+    <button class="login-btn" onclick="location.href='contact/contact.html'">Contact</button>
+  </div>
+</nav>
+
+
+
+<div id="animated-bg">
+  <!-- Glows -->
+  <div class="glow"></div>
+  <div class="glow"></div>
+<br>
+<br>
+<br>
+<br>
+  <!-- HERO -->
+  <div id="hero-wrapper">
+    <div class="hero-container">
+      <div class="hero-text-container">
+        <div class="hero-text" id="hero-text">Welcome to Vithal   <br>  Rakhumai Temple,   <br>   Rajapur Village</div>
+        <div class="hero-subtext">
+          Our temple is a sacred abode of devotion, peace, and unity.<br>
+Dedicated to Lord Vitthal and Goddess Rakhumai, it draws thousands of devotees each year,<br>
+ especially during Kartiki Ekadashi. The air fills with chants of “Vitthal Vitthal,” <br>
+ echoing deep faith and spiritual energy. More than a place of worship,<br>
+  our temple stands as a symbol of community, culture, and divine harmony, welcoming all with love and blessings.
+        </div>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="location.href='donation/donation.html'">Donate Now</button>
+  <button class="btn-secondary" onclick="location.href='event/events.html'">View Events</button>
+        </div>
+      </div>
+
+      <!-- 3D Cube -->
+      <div class="scene">
+        <div class="cube" id="cube">
+          <div class="face front"><img src="img1.png" alt="Front"></div>
+          <div class="face back"><img src="img2.jpg" alt="Back"></div>
+          <div class="face top"><img src="img3.jpg" alt="Top"></div>
+          <div class="face bottom"><img src="img4.jpg" alt="Bottom"></div>
+          <div class="face right"><img src="img1.jpg" alt="Right"></div>
+          <div class="face left"><img src="img2.jpg" alt="Left"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about-me">
+    <div class="container">
+      <h1 class="section-title">About</h1>
+      <p>The Vithal–Rakhumai Temple in Rajapur Village was founded over 50 years ago by devoted 
+villagers. The temple has been the spiritual heart of our community, guiding generations 
+toward peace and devotion.</p>
+    </div>
+  </section>
+<br>
+<br>
+
+<section id="templeCountersSection" class="counter-section">
+  <!-- 1. Years of Legacy -->
+  <div class="counter">
+    <span>🛕</span>
+    <h2 id="yearsCount">0</h2>
+    <p>Years of Legacy</p>
+  </div>
+
+  <!-- 2. Devotees Served -->
+  <div class="counter">
+    <span>🙏</span>
+    <h2 id="devoteeCount">0</h2>
+    <p>Devotees Served</p>
+  </div>
+
+  <!-- 3. Donation Progress -->
+  <div class="donation-progress">
+    <svg class="progress-ring" viewBox="0 0 180 180">
+      <circle class="bg" cx="90" cy="90" r="70"></circle>
+      <circle class="progress" cx="90" cy="90" r="70"></circle>
+    </svg>
+    <div class="progress-text">
+      <span>🎉</span>
+      <h3 id="donationAmount">₹0</h3>
+      <p>out of ₹10 Lakh goal</p>
+    </div>
+  </div>
+
+  <!-- 4. Since Establishment -->
+  <div class="counter">
+    <span>📅</span>
+    <h2 id="yearEst">1975</h2>
+    <p>Since Establishment</p>
+  </div>
+</section>
+
+
+<br>
+<br>
+
+
+
+<section id="festivalCardsSection">
+  <div class="marquee-container">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="event-card">
+        <h2>Kartiki Ekadashi</h2>
+        <p>Bhajans, Aarti, Maha Prasad</p>
+        <div class="date">14th Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🛕</div><div class="emoji">🌸</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Diwali Celebration</h2>
+        <p>Festive lights and sweets</p>
+        <div class="date">2nd Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🌺</div><div class="emoji">🪔</div><div class="emoji">🌻</div><div class="emoji">🔔</div><div class="emoji">🛕</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Navratri Garba</h2>
+        <p>Dance and devotion</p>
+        <div class="date">10th Oct 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🔱</div><div class="emoji">🐚</div><div class="emoji">🪔</div><div class="emoji">🌸</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Holi Festival</h2>
+        <p>Colors, Dance, Music</p>
+        <div class="date">25th Mar 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🌸</div><div class="emoji">🌺</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Makar Sankranti</h2>
+        <p>Kite Flying, Sweets</p>
+        <div class="date">14th Jan 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🪁</div><div class="emoji">🌻</div><div class="emoji">🪔</div><div class="emoji">🐚</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Ganesh Chaturthi</h2>
+        <p>Prayers, Modaks, Celebration</p>
+        <div class="date">10th Sep 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🛕</div><div class="emoji">🌸</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🔔</div>
+        </div>
+      </div>
+
+      <!-- Duplicate for smooth loop -->
+      <div class="event-card">
+        <h2>Kartiki Ekadashi</h2>
+        <p>Bhajans, Aarti, Maha Prasad</p>
+        <div class="date">14th Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🛕</div><div class="emoji">🌸</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Diwali Celebration</h2>
+        <p>Festive lights and sweets</p>
+        <div class="date">2nd Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🌺</div><div class="emoji">🪔</div><div class="emoji">🌻</div><div class="emoji">🔔</div><div class="emoji">🛕</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Navratri Garba</h2>
+        <p>Dance and devotion</p>
+        <div class="date">10th Oct 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🔱</div><div class="emoji">🐚</div><div class="emoji">🪔</div><div class="emoji">🌸</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+
+
+
+<section class="temple-info">
+    <!-- Background video -->
+    <video class="temple-bg-video" autoplay muted loop playsinline>
+      <source src="vid1.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay -->
+    <div class="temple-overlay"></div>
+
+    <!-- Foreground content -->
+    <div class="temple-content">
+      <div class="temple-left">
+        <img src="img1.png" alt="Vitthal–Rakhumai Temple">
+      </div>
+      <div class="temple-right">
+        <div class="title">🛕 <span>Vitthal–Rakhumai Temple</span></div>
+        <div class="text">
+          <p>
+            Welcome to the <span class="highlight">Vitthal–Rakhumai Temple</span> in 
+            <span class="highlight">Rajapur Village</span>, a sacred place of 
+            <span class="highlight">devotion</span>, <span class="highlight">peace</span>, 
+            and <span class="highlight">community</span>. Our temple has been the 
+            <span class="highlight">spiritual heart</span> of the village for over 
+            <span class="highlight">50 years</span>, guiding generations in 
+            <span class="highlight">worship</span> and <span class="highlight">faith</span>.
+          </p>
+
+          <p>
+            We celebrate holy festivals like 
+            <span class="highlight">Kartiki Ekadashi</span> with grand 
+            <span class="highlight">Bhajans</span>, <span class="highlight">Aarti</span>, 
+            and <span class="highlight">Maha Prasad</span>, welcoming devotees from near and far. 
+            The <span class="highlight">temple trust</span> is building a 
+            <span class="highlight">new temple</span> to serve more devotees and preserve our 
+            <span class="highlight">rich spiritual heritage</span>.
+          </p>
+
+          <p>
+            Explore our website to learn about the 
+            <span class="highlight">temple’s history</span>, view 
+            <span class="highlight">festival galleries</span>, check 
+            <span class="highlight">upcoming events</span>, and contribute to our 
+            <span class="highlight">divine mission</span>. Join us in 
+            <span class="highlight">devotion</span>, <span class="highlight">service</span>, 
+            and <span class="highlight">celebration</span> as we keep the 
+            <span class="highlight">light of faith</span> alive in 
+            <span class="highlight">ABC Village</span>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<br>
+<br>
+
+<div class="reviews-section">
+  <h2> Reviews</h2>
+
+  <form id="reviewForm" onsubmit="return false;">
+    <input type="text" id="name" placeholder="Enter your name" required>
+    <textarea id="comment" placeholder="Enter your review" rows="3" required></textarea>
+
+    <label id="starLabel" for="starInput">Select Rating:</label>
+    <div class="star-input" id="starInput">
+      <span data-value="1">&#9733;</span>
+      <span data-value="2">&#9733;</span>
+      <span data-value="3">&#9733;</span>
+      <span data-value="4">&#9733;</span>
+      <span data-value="5">&#9733;</span>
+    </div>
+
+    <button id="submitReviewBtn">Submit Review</button>
+  </form>
+
+  <div id="reviewsContainer"></div>
+
+  <div id="ratingGraph">
+    <canvas id="graphCanvas"></canvas>
+  </div>
+</div>
+
+<br> 
+<br>
+<br>
+<br>
+
+
+<!-- ====== Email Notification Popup ====== -->
+<section id="email-popup-section">
+  <div id="emailModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal" role="document" aria-live="polite">
+      <button id="closeX" class="close-x" aria-label="Close">&times;</button>
+      <h2 id="modalTitle">Join our mailing list</h2>
+      <p id="modalDesc">
+        Spreading devotion, peace, and blessings from
+        <span class="orange-text">Vitthal–Rakhumai Temple, Rajapur Village</span> 🕉️🙏💫
+      </p>
+
+      <form id="emailForm" novalidate>
+        <div class="field">
+          <label for="emailInput" class="sr-only">Email</label>
+          <input id="emailInput" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+          <button class="popup-btn">Submit</button>
+
+        </div>
+        <div class="error" id="errorMsg" role="alert"></div>
+        <div class="controls">
+          <button id="cancelBtn" type="button" class="btn-ghost">Cancel</button>
+        </div>
+
+        <div class="small">
+          You can also
+          <a id="mailtoLink" href="#" style="color:var(--accent); text-decoration:none;">email us directly</a>.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!----end point------------------------------>
+
+
+<!-- Footer Section -->
+<footer>
+  <!-- Animated Balls -->
+  <div class="ball" style="width: 220px; height: 220px; top: -60px; left: -40px; animation-duration: 15s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; top: 120px; left: 70%; animation-duration: 18s;"></div>
+  <div class="ball" style="width: 250px; height: 250px; top: 250px; left: 30%; animation-duration: 20s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; bottom: 60px; left: 20%; animation-duration: 17s;"></div>
+  <div class="ball" style="width: 200px; height: 200px; bottom: 40px; left: 75%; animation-duration: 19s;"></div>
+
+  <div class="footer-container">
+    <!-- Logo & Contact -->
+    <div class="footer-section">
+      <img src="logo.png" alt="Temple Logo" class="footer-logo">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Rajapur Village, Ratnagiri, Maharashtra</p>
+      <p><i class="fas fa-phone"></i> +91 9876543210</p>
+      <p><i class="fas fa-envelope"></i> temple@vitthalrakhumai.org</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-info-circle"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-image"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Gallery</a></li>
+        <li><a href="#"><i class="fas fa-hand-holding-heart"></i> Events</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Donation</a></li>
+        <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h4>Subscribe to Newsletter</h4>
+    <p>Get the latest updates and offers.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+
+  <!-- Temple Message -->
+  <div class="temple-message">
+    “Spreading devotion, peace, and blessings from Vitthal–Rakhumai Temple, Rajapur Village.”
+  </div>
+
+  <!-- Legal -->
+  <div class="footer-legal">
+    <p>© 2025 Vitthal–Rakhumai Temple. All rights reserved. | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+<!-- ================================
+     SCRIPTS
+================================-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<script src="maincontent.js"></script>
+<script src="nav.js"></script>
+<script src="bg.js"></script>
+<script src="count.js"></script>
+<script src="eventhighlight.js"></script>
+<script src="review.js"></script>
+<script src="notificationn.js"></script>
+</body>
+</html>

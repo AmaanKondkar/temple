@@ -1,0 +1,116 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* ===================== Temple Section ===================== */
+.temple-info {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* Background video */
+.temple-bg-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Orange overlay */
+.temple-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,84,47,0.6);
+  z-index: 2;
+}
+
+/* Foreground content */
+.temple-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #fff;
+}
+
+/* Left side image */
+.temple-left {
+  flex: 1 1 350px;
+}
+.temple-left img {
+  width: 100%;
+  border-radius: 12px;
+  border: 5px solid #fff;
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Right side text */
+.temple-right {
+  flex: 1 1 600px;
+}
+.temple-right .title {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  color: #fff;
+}
+.temple-right .title span {
+  background: #FFBB00;
+  color: #001f3f;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+/* Highlighted words */
+.highlight {
+  background: #FFBB00;
+  color: #001f3f;
+  padding: 0 6px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Paragraph styling */
+.temple-right .text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.temple-right .text p {
+  margin-bottom: 20px;
+}
+
+/* ✅ Responsive */
+@media (max-width: 768px) {
+  .temple-content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .temple-right {
+    text-align: center;
+  }
+  .temple-right .title {
+    font-size: 2.2rem;
+  }
+}

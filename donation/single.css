@@ -1,0 +1,108 @@
+/* =======================
+   DONATION CIRCLE STYLES
+======================= */
+.quote {
+  text-align: center;
+  font-weight: 600;  /* bold */
+  color: #000;       /* black text */
+  font-size: 1rem;   /* normal size */
+}
+
+
+
+.donation-circle-section {
+  padding: 60px 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Circle Box */
+.donation-progress {
+  background: #fff;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 0 40px rgba(255, 84, 47, 0.35), 0 0 60px rgba(255, 84, 47, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.donation-progress:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(255, 84, 47, 0.6), 0 0 90px rgba(255, 84, 47, 0.4);
+}
+
+/* SVG Progress Ring */
+.donation-progress svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 220px;
+  height: 220px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 12;
+  stroke-linecap: round;
+}
+
+.progress-ring .bg {
+  stroke: #eee;
+}
+
+.progress-ring .progress {
+  stroke: #FF542F;
+  transition: stroke-dashoffset 1s ease;
+}
+
+/* Inner Text */
+.progress-text {
+  text-align: center;
+  z-index: 2;
+  color: #333;
+}
+
+.progress-text span {
+  font-size: 2rem;
+}
+
+.progress-text h3 {
+  margin: 5px 0 0;
+  color: #FF542F;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.progress-text p {
+  font-size: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .donation-progress {
+    width: 220px;
+    height: 220px;
+  }
+
+  .donation-progress svg {
+    width: 150px;
+    height: 150px;
+  }
+
+  .progress-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .progress-text p {
+    font-size: 0.9rem;
+  }
+}

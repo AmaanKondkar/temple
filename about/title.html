@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creative Section Title</title>
+<style>
+  
+
+  .section-title {
+     display: flex;
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ff4b1f, #ff9068, #f53c04, #f7e1b0);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 5s ease infinite;
+    cursor: pointer;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+    letter-spacing: 2px;
+    /* Subtle 3D shadow */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.377);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .section-title:hover {
+    transform: scale(1.1) rotate(-2deg);
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 3rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <h1 class="section-title">About</h1>
+</body>
+</html>

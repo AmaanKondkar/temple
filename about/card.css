@@ -1,0 +1,124 @@
+/* ====== ElevateLabs Features Section (Unique Version) ====== */
+.fesec {
+  position: relative; /* for stacking context */
+  padding: 80px 10%;
+  background: #f9f9f9;
+  overflow: hidden; /* prevent stars from leaking out */
+  z-index: 1;
+}
+
+/* background star layer */
+.fesec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(white 1px, transparent 1px) 0 0 / 40px 40px,
+              radial-gradient(white 1px, transparent 1px) 20px 20px / 40px 40px;
+  opacity: 0.15;
+  animation: starMove 30s linear infinite;
+  z-index: 0; /* ⭐ behind everything */
+}
+
+@keyframes starMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-200px); }
+}
+
+.fetit {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 800;
+  color: #FF542F;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.fegri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.fecar {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #ffffff, #FF542F);
+  border-radius: 20px;
+  border: 1px solid #d3dce6;
+  box-shadow: 10px 10px 20px rgba(0,0,0,0.15),
+              -6px -6px 15px rgba(255,255,255,0.6);
+  padding: 30px 24px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
+}
+
+.fecar:hover {
+  transform: translateY(-20px);
+  box-shadow: 14px 14px 30px rgba(0, 0, 0, 0.2),
+              -10px -10px 20px rgba(255, 255, 255, 0.7);
+}
+
+.feico {
+  font-size: 40px;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 3;
+}
+
+.fetie {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #FF542F;
+  position: relative;
+  z-index: 3;
+}
+
+.fedec {
+  font-size: 16px;
+  line-height: 1.6;
+  color: white;
+  position: relative;
+  z-index: 3;
+}
+
+/* Floating icons inside card */
+.feloop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  z-index: 2; /* stay above card bg but below text */
+  pointer-events: none;
+}
+
+.feloop span {
+  position: absolute;
+  font-size: 30px;
+  animation: feFloat 3s ease-in-out infinite;
+}
+
+.feloop span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.feloop span:nth-child(2) { top: 30%; left: 70%; animation-delay: 1s; }
+.feloop span:nth-child(3) { top: 60%; left: 25%; animation-delay: 2s; }
+.feloop span:nth-child(4) { top: 75%; left: 80%; animation-delay: 3s; }
+.feloop span:nth-child(5) { top: 45%; left: 50%; animation-delay: 1.5s; }
+
+@keyframes feFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(10deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fetit { font-size: 30px; }
+  .fetie { font-size: 18px; }
+  .fedec { font-size: 14px; }
+}

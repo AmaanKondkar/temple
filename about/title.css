@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('MyFont.otf') format('truetype');
+}
+
+
+
+.section-title {
+    position: relative;
+    z-index: 1;
+
+  font-family: 'MyFont', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    /* Static gradient (no animation) */
+    background: linear-gradient(90deg, #ff4b1f, #ff9068, #f53c04, #f7e1b0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Simple shadow (no glow animation) */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 3rem;
+    }
+}

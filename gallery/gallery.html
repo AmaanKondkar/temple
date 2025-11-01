@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kondkar House Hero with 3D Cube (Full BG Animation)</title>
+<!-- 🔶 Vitthal–Rakhumai Temple Gallery Section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<!-- Swiper & GSAP (only include once per page if not already) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- CSS Files -->
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="vsi.css">
+<link rel="stylesheet" href="title.css">
+<link rel="stylesheet" href="gallery.css">
+<link rel="stylesheet" href="photos.css">
+<link rel="stylesheet" href="footer.css">
+
+<style>
+/* Optional inline CSS area (kept empty as per request) */
+</style>
+</head>
+
+<body>
+
+<!-- ==============================
+     NAVIGATION BAR (KEEP AS IS)
+============================== -->
+<nav>
+  <div class="brand">
+    <img src="logo.png" alt="Logo" />
+    Vithal–Rakhumai
+  </div>
+
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About</a>
+    <a href="../gallery/gallery.html" class="active">Gallery</a>
+    <a href="../event/events.html">Events</a>
+    <a href="../donation/donation.html">Donation</a>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="login-btn" onclick="location.href='../contact/contact.html'">Contact</button>
+  </div>
+
+  <button class="hamburger" onclick="toggleMobileMenu()" id="hamburgerBtn">☰</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About</a>
+    <a href="../gallery/gallery.html" class="active">Gallery</a>
+    <a href="../event/events.html">Events</a>
+    <a href="../donation/donation.html">Donation</a>
+    <button class="login-btn" onclick="location.href='../contact/contact.html'">Contact</button>
+  </div>
+</nav>
+
+<!-- ==============================
+     STAR BACKGROUND ANIMATION (KEEP AS IS)
+============================== -->
+<div id="animated-bg">
+  <div class="glow"></div>
+  <div class="glow"></div>
+
+</div><!---END POINT---->
+
+
+
+
+<div class="slider-section">
+  <h1 class="section-title">Gallery</h1>
+<br>
+<br>
+  <div class="main-display" id="mainDisplay">
+    <img id="mainImage" src="" alt="Main" />
+    <div class="text-overlay" id="textOverlay">
+      <h2></h2>
+      <p></p>
+    </div>
+  </div>
+
+  <div class="thumb-container">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper" id="thumbWrapper"></div>
+    </div>
+  </div>
+
+  <div class="nav-buttons">
+    <button id="prevBtn">⟵ Prev</button>
+    <button id="nextBtn">Next ⟶</button>
+  </div>
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+
+
+<div class="wrap" role="main">
+  <div class="header">
+    <div>
+      <div class="title">Celebration Moments — Vitthal–Rakhumai</div>
+      <div class="subtitle">
+        All · Temple View · Celebration · Community · Decorations & Darshan · Bhajan & Dindi · Divine Videos
+      </div>
+    </div>
+  </div>
+
+  <div class="controls-row">
+    <div class="tabs" role="tablist" aria-label="Gallery sections">
+      <button class="tab active" data-section="temple" role="tab" aria-selected="true">🛕 Temple View</button>
+      <button class="tab" data-section="celebration" role="tab" aria-selected="false">🌿 Celebration Moments</button>
+      <button class="tab" data-section="community" role="tab" aria-selected="false">👨‍👩‍👧‍👦 Community</button>
+      <button class="tab" data-section="decorations" role="tab" aria-selected="false">🌸 Decorations</button>
+      <button class="tab" data-section="bhajan" role="tab" aria-selected="false">🎶 Bhajan & Dindi</button>
+      <button class="tab" data-section="videos" role="tab" aria-selected="false">🎥 Divine Videos</button>
+    </div>
+
+    <button id="allBtn" class="all-btn">All</button>
+  </div>
+
+  <!-- TEMPLE -->
+  <section id="temple" class="section active">
+    <div class="grid" data-section-grid>
+      <article class="card" tabindex="0">
+        <button class="media-btn" data-type="image" data-src="a1.png" data-title="Temple Exterior" data-desc="Peaceful exterior of Vitthal–Rakhumai.">
+          <div class="thumb"><img src="a1.png" alt="Temple Exterior"></div>
+          <div class="meta">
+            <div>
+              <h4>🛕 Temple</h4>
+              <p>The sacred Vitthal–Rakhumai Temple of Rajapur stands as a symbol of faith and devotion. </p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+
+      <article class="card" tabindex="0">
+        <button class="media-btn" data-type="image" data-src="a3.png" data-title="Inner Sanctum" data-desc="Glimpse of the sanctum.">
+          <div class="thumb"><img src="a3.png" alt="Inner Sanctum"></div>
+          <div class="meta">
+            <div>
+              <h4>Temple Outside View</h4>
+              <p>A peaceful glimpse of the temple’s grand exterior, glowing with devotion and surrounded by divine serenity.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+
+      <article class="card" tabindex="0">
+        <button class="media-btn" data-type="image" data-src="a4.jpg" data-title="Temple Courtyard" data-desc="Gathering space for devotees.">
+          <div class="thumb"><img src="a4.jpg" alt="Courtyard"></div>
+          <div class="meta">
+            <div>
+              <h4>Temple Inside View</h4>
+              <p>The inner sanctum radiates divine energy, where devotees bow with faith before Lord Vitthal and Goddess Rakhumai.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- CELEBRATION -->
+  <section id="celebration" class="section">
+    <div class="grid" data-section-grid>
+      <article class="card">
+        <button class="media-btn" data-type="image" data-src="a2.png" data-title="Kartiki Celebrations" data-desc="Festive lights & devotion.">
+          <div class="thumb"><img src="a2.png" alt="Kartiki"></div>
+          <div class="meta">
+            <div>
+              <h4>🎉 Festival</h4>
+              <p>A vibrant celebration of faith and togetherness, where music, lights, and devotion fill the temple with joy.<p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+
+      <article class="card">
+        <button class="media-btn" data-type="image" data-src="a5.png" data-title="Prasad">
+          <div class="thumb"><img src="a5.png" alt="Prasad"></div>
+          <div class="meta">
+            <div>
+              <h4>Celebration</h4>
+              <p>Devotees unite in joy and devotion during vibrant Kartiki Ekadashi festivities filled with bhajans, lights, and prayers.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- COMMUNITY -->
+  <section id="community" class="section">
+    <div class="grid" data-section-grid>
+      <article class="card">
+        <button class="media-btn" data-type="image" data-src="a6.jpg" data-title="Community" data-desc="Devotees in prayer.">
+          <div class="thumb"><img src="a6.jpg" alt="Community"></div>
+          <div class="meta">
+            <div>
+              <h4>Devotees</h4>
+              <p>Faith binds community.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- DECORATIONS -->
+  <section id="decorations" class="section">
+    <div class="grid" data-section-grid>
+      <article class="card">
+        <button class="media-btn" data-type="image" data-src="a1.png" data-title="Alankar" data-desc="Murti decorated with flowers.">
+          <div class="thumb"><img src="a1.png" alt="Alankar"></div>
+          <div class="meta">
+            <div>
+              <h4>Alankar</h4>
+              <p>Divine decorations.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- BHAJAN -->
+  <section id="bhajan" class="section">
+    <div class="grid" data-section-grid>
+      <article class="card">
+        <button class="media-btn" data-type="image" data-src="a7.jpg" data-title="Bhajan" data-desc="Singing devotion.">
+          <div class="thumb"><img src="a7.jpg" alt="Bhajan"></div>
+          <div class="meta">
+            <div>
+              <h4>Bhajan</h4>
+              <p>Songs & devotion.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+
+      <article class="card">
+        <button class="media-btn" data-type="image" data-src="a8.jpg" data-title="Dindi" data-desc="Varkari procession.">
+          <div class="thumb"><img src="a8.jpg" alt="Dindi"></div>
+          <div class="meta">
+            <div>
+              <h4>Dindi</h4>
+              <p>Procession & unity.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos" class="section">
+    <div class="grid" data-section-grid>
+      <article class="card">
+        <button class="media-btn video-thumb" data-type="video" data-video="video1.mp4" data-title="Aarti Highlights" data-desc="Short aarti clip.">
+          <div class="thumb"><img src="a9.jpg" alt="Aarti"></div>
+          <div class="meta">
+            <div>
+              <h4>Aarti Highlights</h4>
+              <p>Evening aarti clip.</p>
+            </div>
+            <div class="share-out" title="Share (outside)">⤴</div>
+          </div>
+        </button>
+      </article>
+    </div>
+  </section>
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+
+    <div class="modal-media" id="modalMedia" aria-live="polite"></div>
+
+    <div class="modal-body">
+      <h3 id="modalTitle" class="modal-title"></h3>
+      <p id="modalDesc" class="modal-desc"></p>
+    </div>
+
+    <div class="modal-nav">
+      <button class="prev" id="modalPrev" aria-label="Previous">‹</button>
+      <button class="next" id="modalNext" aria-label="Next">›</button>
+    </div>
+
+    <div class="modal-share">
+      <div class="share-bubble" id="modalShareMenu" aria-hidden="true">
+        <div class="share-option" id="modalShareWhatsApp">WhatsApp</div>
+        <div class="share-option" id="modalShareCopy">Copy link</div>
+      </div>
+      <button class="share-btn" id="modalShareToggle" aria-haspopup="true" aria-expanded="false" title="Share">⤴</button>
+    </div>
+  </div>
+</div>
+
+<!-- card-level share menu -->
+<div class="card-share-menu" id="cardShareMenu" aria-hidden="true">
+  <div class="share-option" id="cardShareWhatsApp">WhatsApp</div>
+  <div class="share-option" id="cardShareCopy">Copy link</div>
+</div>
+
+<!-- toast -->
+<div id="toast" class="toast" role="status" aria-live="polite">Copied</div>
+
+
+
+
+
+<br>
+<br>
+
+
+<section class="rand-grid-sec">
+  <div class="rand-grid">
+    <img src="a1.png" alt="">
+    <img src="a2.png" alt="">
+    <img src="a3.png" alt="">
+    <img src="a4.jpg" alt="">
+    <img src="a5.png" alt="">
+    <img src="a6.jpg" alt="">
+    <img src="a7.jpg" alt="">
+    <img src="a8.jpg" alt="">
+    <img src="a9.jpg" alt="">
+    <img src="img10.jpg" alt="">
+  </div>
+</section>
+
+<br>
+<br>
+
+
+
+
+
+
+
+<!-- ==============================
+     FOOTER (KEEP AS IS)
+============================== -->
+<footer>
+  <!-- Animated Balls -->
+  <div class="ball" style="width: 220px; height: 220px; top: -60px; left: -40px; animation-duration: 15s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; top: 120px; left: 70%; animation-duration: 18s;"></div>
+  <div class="ball" style="width: 250px; height: 250px; top: 250px; left: 30%; animation-duration: 20s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; bottom: 60px; left: 20%; animation-duration: 17s;"></div>
+  <div class="ball" style="width: 200px; height: 200px; bottom: 40px; left: 75%; animation-duration: 19s;"></div>
+
+  <div class="footer-container">
+    <!-- Logo & Contact -->
+    <div class="footer-section">
+      <img src="logo.png" alt="Temple Logo" class="footer-logo">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Rajapur Village, Ratnagiri, Maharashtra</p>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> temple@vitthalrakhumai.org</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-info-circle"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-image"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Gallery</a></li>
+        <li><a href="#"><i class="fas fa-hand-holding-heart"></i> Events</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Donation</a></li>
+        <li><a href="#"><i class="fas fa-phone"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h4>Subscribe to Newsletter</h4>
+    <p>Get the latest updates and offers.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+
+  <!-- Temple Message -->
+  <div class="temple-message">
+    “Spreading devotion, peace, and blessings from Vitthal–Rakhumai Temple, Rajapur Village.”
+  </div>
+
+  <!-- Legal -->
+  <div class="footer-legal">
+    <p>© 2025 Vitthal–Rakhumai Temple. All rights reserved. | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+
+
+
+<!-- ==============================
+     SCRIPTS (KEEP ALL LINKS)
+============================== -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="vsi.js"></script>
+<script src="nav.js"></script>
+<script src="bg.js"></script>
+<script src="gallery.js"></script>
+<script src="fixingstar.js"></script>
+</body>
+</html>

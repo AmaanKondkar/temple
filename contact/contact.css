@@ -1,0 +1,210 @@
+:root {
+  --saffron: #ef650f;
+  --gold: #f27e18;
+  --bg: radial-gradient(circle at top, #1a0f0f 0%, #0b0b0c 100%);
+  --glass: rgba(255, 255, 255, 0.08);
+  --white: #fff;
+}
+
+.contact-section {
+  position: relative;
+  background: var(--bg);
+  color: var(--white);
+  padding: 4rem 0;
+  overflow: hidden;
+}
+
+/* ===== Background Motion Circles ===== */
+.bg-blur {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.bg-blur:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  background: var(--saffron);
+  top: 5%;
+  left: 10%;
+  animation: move1 10s infinite alternate ease-in-out;
+}
+
+.bg-blur:nth-child(2) {
+  width: 400px;
+  height: 400px;
+  background: var(--gold);
+  bottom: 10%;
+  right: 10%;
+  animation: move2 12s infinite alternate ease-in-out;
+}
+
+@keyframes move1 {
+  from { transform: translate(0, 0); }
+  to { transform: translate(50px, 40px); }
+}
+
+@keyframes move2 {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-60px, -30px); }
+}
+
+/* ===== Contact Container ===== */
+.contact-container {
+  position: relative;
+  z-index: 5;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  backdrop-filter: blur(10px);
+  background: var(--glass);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(255, 145, 77, 0.2);
+}
+
+/* ===== Info Side ===== */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.contact-info h1 {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.8rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.contact-info h2 {
+  font-size: 1.3rem;
+  color: var(--saffron);
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: #e0dcd8;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+.info-item i {
+  color: var(--gold);
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.social-links a {
+  color: var(--saffron);
+  margin-right: 1rem;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--gold);
+  transform: translateY(-4px);
+}
+
+/* ===== Form ===== */
+.contact-form {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-form h3 {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  outline: none;
+  color: var(--white);
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  border: none;
+  padding: 0.9rem 1rem;
+  color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.contact-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--gold);
+}
+
+/* ===== Popup ===== */
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 2rem 2.5rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 0 25px rgba(255, 210, 127, 0.4);
+  color: var(--gold);
+  font-size: 1.2rem;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 850px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    margin: 3rem 1rem;
+  }
+  .contact-info {
+    text-align: center;
+    align-items: center;
+  }
+}

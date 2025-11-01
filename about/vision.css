@@ -1,0 +1,118 @@
+.animated-cards-section {
+  position: relative;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* Starry background */
+.animated-cards-section .stars-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none; /* So stars don’t block interaction */
+}
+
+.animated-cards-section .star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.8;
+  animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 0.3; transform: scale(0.5); }
+}
+
+/* Card container */
+.animated-cards-section .card-container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+  z-index: 1; /* On top of stars */
+}
+
+/* Card Design (Wider) */
+.animated-cards-section .card {
+  position: relative;
+  width: 380px;  /* Increased width */
+  height: 450px; /* Adjusted height */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  background: #000;
+  cursor: pointer;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.animated-cards-section .card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 16px 35px rgba(255, 84, 47, 0.5);
+}
+
+.animated-cards-section .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s ease;
+}
+
+/* Overlay Info */
+.animated-cards-section .card .info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 25px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  border-top: 2px solid rgba(255, 84, 47, 0.7);
+}
+
+.animated-cards-section .card.active .info,
+.animated-cards-section .card:hover .info {
+  height: 50%;
+  opacity: 1;
+}
+
+.animated-cards-section .info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  color: #ff784f;
+  text-shadow: 0 0 8px rgba(255, 84, 47, 0.6);
+}
+
+.animated-cards-section .info p {
+  font-size: 0.95rem;
+  line-height: 1.5rem;
+  color: #f1f1f1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .animated-cards-section .card { width: 320px; height: 420px; }
+}
+
+@media (max-width: 768px) {
+  .animated-cards-section .card-container { flex-wrap: wrap; }
+  .animated-cards-section .card { width: 90%; height: 380px; }
+}
+
+@media (max-width: 480px) {
+  .animated-cards-section .card { width: 100%; height: 350px; }
+  .animated-cards-section .info h3 { font-size: 1.2rem; }
+  .animated-cards-section .info p { font-size: 0.85rem; }
+}

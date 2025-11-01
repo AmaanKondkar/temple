@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Email Popup Demo</title>
+<style>
+  :root {
+    --bg: #0f1724;
+    --card: #fff;
+    --accent: #2563eb;
+    --muted: #6b7280;
+    --orange: #f97316; /* Orange color */
+  }
+  body {
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial; 
+    margin: 0; 
+    background: linear-gradient(180deg, #0f1724 0%, #071023 100%);
+    color: #fff; 
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  }
+  main {
+    max-width: 900px; 
+    padding: 40px; 
+    text-align: center;
+  }
+  /* Modal backdrop */
+  .modal-backdrop {
+    position: fixed; 
+    inset: 0; 
+    background: rgba(2, 6, 23, 0.6); 
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    z-index: 9999;
+    backdrop-filter: blur(2px);
+  }
+  .modal-backdrop.show { 
+    display: flex; 
+    animation: fadeIn .18s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0 } 
+    to { opacity: 1 }
+  }
+
+  /* Modal card */
+  .modal {
+    background: var(--card); 
+    color: #0b1220; 
+    width: 90%;  /* Adjust width for smaller screens */
+    max-width: 500px;  /* Max width for large screens */
+    border-radius: 12px; 
+    padding: 20px;  /* Reduced padding for better mobile fit */
+    box-shadow: 0 10px 30px rgba(2, 6, 23, 0.4);
+    transform: translateY(10px); 
+    opacity: 0; 
+    animation: pop .22s ease forwards;
+  }
+  @keyframes pop {
+    to { transform: none; opacity: 1 }
+  }
+  .modal h2 { 
+    margin: 0 0 8px; 
+    font-size: 1.25rem; 
+    text-align: center;
+  }
+  .modal p { 
+    margin: 0 0 14px; 
+    color: var(--muted); 
+    font-size: 1rem; 
+    line-height: 1.5;
+    text-align: center;
+  }
+  .orange-text {
+    color: var(--orange); /* Apply orange color */
+    font-weight: bold;
+  }
+  .field {
+    display: flex; 
+    gap: 8px; 
+    align-items: center;
+  }
+  .field input[type="email"] {
+    flex: 1; 
+    padding: 12px 14px; 
+    border-radius: 8px; 
+    border: 1px solid #e6e9ef; 
+    font-size: 1rem;
+  }
+  .error {
+    color: #b91c1c; 
+    font-size: 0.85rem; 
+    margin-top: 8px; 
+    display: none;
+  }
+  .controls {
+    display: flex; 
+    gap: 8px; 
+    margin-top: 14px; 
+    justify-content: flex-end;
+  }
+  button {
+    padding: 9px 14px; 
+    border-radius: 8px; 
+    border: 0; 
+    cursor: pointer; 
+    font-weight: 600;
+  }
+  .btn-primary { background: var(--accent); color: white; }
+  .btn-ghost { background: transparent; border: 1px solid #d1d5db; }
+  .btn-secondary { background: #f3f4f6; color: #0b1220; }
+  .small {
+    font-size: 0.85rem; 
+    color: var(--muted); 
+    margin-top: 10px;
+    text-align: center;
+  }
+  .close-x {
+    position: absolute; 
+    right: 12px; 
+    top: 12px; 
+    background: transparent; 
+    border: 0; 
+    font-size: 18px; 
+    cursor: pointer;
+  }
+
+  /* Accessibility visible focus */
+  button:focus, input:focus { 
+    outline: 3px solid rgba(37, 99, 235, 0.22); 
+    outline-offset: 2px; 
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .modal {
+      width: 90%;  /* Make the popup more compact on tablets */
+      padding: 20px;
+      margin-left: 10px;  /* Add margin on left */
+      margin-right: 10px; /* Add margin on right */
+    }
+    .modal h2 {
+      font-size: 1.1rem;
+    }
+    .modal p {
+      font-size: 0.9rem;
+    }
+    .field input[type="email"] {
+      font-size: 0.9rem;
+    }
+    .controls button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+    .btn-primary {
+      width: 100%;  /* Make submit button full-width on mobile */
+    }
+  }
+
+  @media (max-width: 420px) { 
+    .modal {
+      width: 95%;  /* Ensure it fits better on small mobile screens */
+      padding: 10px;
+      margin-left: 15px;  /* Add margin on left */
+      margin-right: 15px; /* Add margin on right */
+    }
+    .modal h2 {
+      font-size: 1rem;
+    }
+    .modal p {
+      font-size: 0.8rem;
+    }
+    .field input[type="email"] {
+      font-size: 0.9rem;
+    }
+    .controls button {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+    }
+    .small {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <h1>Website Content</h1>
+  <p>Example page — the email popup will appear after 5 seconds (even after refreshing the page).</p>
+</main>
+
+<!-- Modal -->
+<div id="emailModalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+  <div class="modal" role="document" aria-live="polite">
+    <button id="closeX" class="close-x" aria-label="Close">&times;</button>
+    <h2 id="modalTitle">Join our mailing list</h2>
+    <p id="modalDesc">Spreading devotion, peace, and blessings from <span class="orange-text">Vitthal–Rakhumai Temple, ABC Village</span> 🕉️🙏💫</p>
+
+    <form id="emailForm" novalidate>
+      <div class="field">
+        <label for="emailInput" class="sr-only">Email</label>
+        <input id="emailInput" name="email" type="email" placeholder="you@example.com" autocomplete="email" required />
+        <button id="submitBtn" class="btn-primary" type="submit">Submit</button>
+      </div>
+      <div class="error" id="errorMsg" role="alert"></div>
+      <div class="controls">
+        <button id="cancelBtn" type="button" class="btn-ghost">Cancel</button>
+      </div>
+
+      <div class="small">
+        You can also <a id="mailtoLink" href="#" style="color:var(--accent); text-decoration:none;">email us directly</a>.
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+(function(){
+  const DELAY_MS = 5000;  // Delay 5 seconds before showing the modal
+  const STORAGE_KEY = 'emailPopupDismissed_v1'; // Remove if you want to reset popup on refresh
+
+  const backdrop = document.getElementById('emailModalBackdrop');
+  const closeX = document.getElementById('closeX');
+  const cancelBtn = document.getElementById('cancelBtn');
+  const form = document.getElementById('emailForm');
+  const emailInput = document.getElementById('emailInput');
+  const errorMsg = document.getElementById('errorMsg');
+  const mailtoLink = document.getElementById('mailtoLink');
+
+  let lastFocused = null;
+
+  function showModal() {
+    lastFocused = document.activeElement;
+    backdrop.classList.add('show');
+    emailInput.value = '';
+    errorMsg.style.display = 'none';
+    emailInput.focus();
+    document.addEventListener('keydown', onKeyDown);
+  }
+
+  function hideModal(markDismissed = true) {
+    backdrop.classList.remove('show');
+    document.removeEventListener('keydown', onKeyDown);
+    if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+  }
+
+  function onKeyDown(e) {
+    if (e.key === 'Escape') hideModal(true);
+    trapFocus(e);
+  }
+
+  function trapFocus(e) {
+    const focusable = backdrop.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+    if (!backdrop.classList.contains('show')) return;
+    if (!focusable.length) return;
+    if (!backdrop.contains(document.activeElement)) focusable[0].focus();
+    const first = focusable[0], last = focusable[focusable.length - 1];
+    if (e.key === 'Tab') {
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      }
+      else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    }
+  }
+
+  // Simple email validation
+  function isValidEmail(email) {
+    if (!email || typeof email !== 'string') return false;
+    email = email.trim();
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  // Handle the email submission
+  form.addEventListener('submit', async (ev) => {
+    ev.preventDefault();
+    errorMsg.style.display = 'none';
+    const email = emailInput.value.trim();
+
+    if (!isValidEmail(email)) {
+      errorMsg.textContent = 'Please enter a valid email address.';
+      errorMsg.style.display = 'block';
+      emailInput.focus();
+      return;
+    }
+
+    // Store email locally in sessionStorage
+    const saved = JSON.parse(sessionStorage.getItem('collectedEmails_local')) || [];
+    saved.push({ email, ts: new Date().toISOString() });
+    sessionStorage.setItem('collectedEmails_local', JSON.stringify(saved));
+
+    alert('Thanks for your email! Your email was saved in this session.');
+    hideModal(true);
+  });
+
+  // Close actions
+  closeX.addEventListener('click', () => hideModal(true));
+  cancelBtn.addEventListener('click', () => hideModal(true));
+
+  // Show the modal 5 seconds after page load
+  setTimeout(() => {
+    if (document.visibilityState === 'visible') {
+      showModal();
+    }
+  }, DELAY_MS);
+
+})();
+</script>
+
+</body>
+</html>

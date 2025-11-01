@@ -1,0 +1,89 @@
+#festivalCardsSection {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative;
+  background: transparent;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 20px;
+  width: max-content; /* Fix: allow full width of all cards */
+  animation: marquee 10s linear infinite; /* Adjusted duration for smooth scroll */
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Works if you duplicate the cards for seamless loop */
+}
+
+.event-card {
+  background: #fff;
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  transform-origin: top center;
+  animation: swing 2s ease-in-out infinite alternate;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes swing {
+  0% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+.emoji-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 1.5rem;
+  bottom: 0;
+  animation: popup 3s ease-in-out infinite;
+}
+
+@keyframes popup {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(-120px); opacity: 0; }
+}
+
+.emoji:nth-child(1) { left: 10%; animation-delay: 0s; }
+.emoji:nth-child(2) { left: 30%; animation-delay: 0.5s; }
+.emoji:nth-child(3) { left: 50%; animation-delay: 1s; }
+.emoji:nth-child(4) { left: 70%; animation-delay: 1.5s; }
+.emoji:nth-child(5) { left: 85%; animation-delay: 2s; }
+
+.event-card h2 { color: #ff4d6d; margin: 10px 0 5px; font-size: 1.1rem; z-index: 2; }
+.event-card p { font-size: 0.85rem; color: #333; margin-bottom: 10px; z-index: 2; }
+.event-card .date { font-weight: bold; color: #ff4d6d; font-size: 0.95rem; z-index: 2; }
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .event-card { width: 180px; height: 180px; padding: 15px; }
+  .marquee-track { animation-duration: 8s; } /* slower scroll on smaller screens */
+}
+@media (max-width: 600px) {
+  .event-card { width: 140px; height: 140px; padding: 10px; }
+  .marquee-track { animation-duration: 10s; } /* even slower for very small screens */
+}

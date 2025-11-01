@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Kondkar House - Navbar & Footer Only</title>
+
+<!-- External Links (Keep All) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- Local CSS -->
+<link rel="stylesheet" href="nav.css">
+<link rel="stylesheet" href="vsi.css">
+<link rel="stylesheet" href="event.css">
+<link rel="stylesheet" href="eventhighlight.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="title.css">
+<style>
+/* (Optional inline CSS area, kept empty as per request) */
+</style>
+</head>
+
+<body>
+
+<!-- ==============================
+     NAVIGATION BAR (KEEP)
+============================== -->
+<nav>
+  <div class="brand">
+    <img src="logo.png" alt="Logo" />
+    Vithal–Rakhumai
+  </div>
+
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About</a>
+    <a href="../gallery/gallery.html">Gallery</a>
+    <a href="../event/events.html" class="active">Events</a>
+    <a href="../donation/donation.html">Donation</a>
+  </div>
+
+  <div class="nav-buttons">
+    <button class="login-btn" onclick="location.href='../contact/contact.html'">Contact</button>
+  </div>
+
+  <button class="hamburger" onclick="toggleMobileMenu()" id="hamburgerBtn">☰</button>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="../index.html">Home</a>
+    <a href="../about/about.html">About</a>
+    <a href="../gallery/gallery.html">Gallery</a>
+    <a href="../event/events.html" class="active">Events</a>
+    <a href="../donation/donation.html">Donation</a>
+    <button class="login-btn" onclick="location.href='../contact/contact.html'">Contact</button>
+  </div>
+</nav>
+
+
+<!-- ==============================
+     BACKGROUND ANIMATION (KEEP)
+============================== -->
+<div id="animated-bg">
+  <div class="glow"></div>
+  <div class="glow"></div>
+
+
+<!-- (All other sections removed as requested) -->
+
+
+<section class="events" id="eventsSection">
+  <h2>📜 Upcoming Events</h2>
+  <div class="timeline" id="timeline">
+    <div class="event">
+      <div class="date">14th Nov 2025</div>
+      <div class="content">
+        <h3>Kartiki Ekadashi 2025</h3>
+        <p>Morning Aarti, Bhajan, and Maha Prasad</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="date">Every Saturday</div>
+      <div class="content">
+        <h3>Weekly Bhajan</h3>
+        <p>Evening Bhajan and Satsang</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="date">5th Dec 2025</div>
+      <div class="content">
+        <h3>Temple Fundraiser</h3>
+        <p>Cultural Program and Donation Appeal</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="date">20th Jan 2026</div>
+      <div class="content">
+        <h3>Makar Sankranti Celebration</h3>
+        <p>Puja, traditional rituals, and prasad distribution</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="date">Every Full Moon (Pournima)</div>
+      <div class="content">
+        <h3>Special Bhajan Sandhya</h3>
+        <p>Devotional songs and kirtans under the moonlight</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="date">10th Mar 2026</div>
+      <div class="content">
+        <h3>Holi Pooja & Colors of Devotion</h3>
+        <p>Sacred rituals followed by joyful color celebrations</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="past-actions">
+    <button id="togglePast">View Past Events</button>
+  </div>
+
+  <div class="overlay-dim" id="overlay"></div>
+  <div class="past-modal" id="pastModal">
+    <h4>Past Events</h4>
+    <div class="past-items">
+      • Ashadhi Ekadashi 2025 — Morning Aarti and Devotional Procession<br>
+      • Chaitra Pournima 2025 — Bhajan Sandhya and Maha Prasad<br>
+      • Annual Seva Week 2024 — Volunteer & Community Activities<br>
+      • Deepavali 2024 — Evening Aarti & Lighting Ceremony
+    </div>
+    <div class="controls">
+      <button class="btn-close" id="close">Close</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+<section id="festivalCardsSection">
+  <div class="marquee-container">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="event-card">
+        <h2>Kartiki Ekadashi</h2>
+        <p>Bhajans, Aarti, Maha Prasad</p>
+        <div class="date">14th Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🛕</div><div class="emoji">🌸</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Diwali Celebration</h2>
+        <p>Festive lights and sweets</p>
+        <div class="date">2nd Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🌺</div><div class="emoji">🪔</div><div class="emoji">🌻</div><div class="emoji">🔔</div><div class="emoji">🛕</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Navratri Garba</h2>
+        <p>Dance and devotion</p>
+        <div class="date">10th Oct 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🔱</div><div class="emoji">🐚</div><div class="emoji">🪔</div><div class="emoji">🌸</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Holi Festival</h2>
+        <p>Colors, Dance, Music</p>
+        <div class="date">25th Mar 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🌸</div><div class="emoji">🌺</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Makar Sankranti</h2>
+        <p>Kite Flying, Sweets</p>
+        <div class="date">14th Jan 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🪁</div><div class="emoji">🌻</div><div class="emoji">🪔</div><div class="emoji">🐚</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Ganesh Chaturthi</h2>
+        <p>Prayers, Modaks, Celebration</p>
+        <div class="date">10th Sep 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🛕</div><div class="emoji">🌸</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🔔</div>
+        </div>
+      </div>
+
+      <!-- Duplicate for smooth loop -->
+      <div class="event-card">
+        <h2>Kartiki Ekadashi</h2>
+        <p>Bhajans, Aarti, Maha Prasad</p>
+        <div class="date">14th Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🛕</div><div class="emoji">🌸</div><div class="emoji">🪔</div><div class="emoji">🌹</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Diwali Celebration</h2>
+        <p>Festive lights and sweets</p>
+        <div class="date">2nd Nov 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🌺</div><div class="emoji">🪔</div><div class="emoji">🌻</div><div class="emoji">🔔</div><div class="emoji">🛕</div>
+        </div>
+      </div>
+
+      <div class="event-card">
+        <h2>Navratri Garba</h2>
+        <p>Dance and devotion</p>
+        <div class="date">10th Oct 2025</div>
+        <div class="emoji-container">
+          <div class="emoji">🔱</div><div class="emoji">🐚</div><div class="emoji">🪔</div><div class="emoji">🌸</div><div class="emoji">🕉️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><!--end-->
+
+<!-- ==============================
+     FOOTER (KEEP)
+============================== -->
+<footer>
+  <!-- Animated Balls -->
+  <div class="ball" style="width: 220px; height: 220px; top: -60px; left: -40px; animation-duration: 15s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; top: 120px; left: 70%; animation-duration: 18s;"></div>
+  <div class="ball" style="width: 250px; height: 250px; top: 250px; left: 30%; animation-duration: 20s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; bottom: 60px; left: 20%; animation-duration: 17s;"></div>
+  <div class="ball" style="width: 200px; height: 200px; bottom: 40px; left: 75%; animation-duration: 19s;"></div>
+
+  <div class="footer-container">
+    <!-- Logo & Contact -->
+    <div class="footer-section">
+      <img src="logo.png" alt="Temple Logo" class="footer-logo">
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Rajapur Village, Ratnagiri, Maharashtra</p>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> temple@vitthalrakhumai.org</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-image"></i> Gallery</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
+        <li><a href="#"><i class="fas fa-hand-holding-heart"></i> Donation</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h4>Subscribe to Newsletter</h4>
+    <p>Get the latest updates and offers.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+
+  <!-- Temple Message -->
+  <div class="temple-message">
+    “Spreading devotion, peace, and blessings from Vitthal–Rakhumai Temple, Rajapur Village.”
+  </div>
+
+  <!-- Legal -->
+  <div class="footer-legal">
+    <p>© 2025 Vitthal–Rakhumai Temple. All rights reserved. | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+<!-- ==============================
+     SCRIPTS (KEEP ALL LINKS)
+============================== -->
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="event.js"></script>
+<script src="nav.js"></script>
+<script src="bg.js"></script>
+<script src="eventhighlight.js"></script>
+
+</body>
+</html>

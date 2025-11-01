@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #0e0e0e;
+  color: #fff;
+}
+
+.donation-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #1a1a1a, #292929);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  margin: 50px auto;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.donation-title {
+  font-size: 2rem;
+  color: #ff7b00;
+  margin-bottom: 20px;
+}
+
+.donation-text {
+  color: #eae8e7;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.progress-container {
+  margin: 30px 0;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 16px;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ffcc00, #ff7b00);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.progress-info {
+  margin-top: 10px;
+  color: #f4f2f0;
+  font-weight: 500;
+}
+
+.donation-options button {
+  margin: 10px;
+  padding: 12px 25px;
+  background: #ff7b00;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.donation-options button:hover {
+  background: #ffa600;
+  transform: scale(1.05);
+}
+
+
+
+
+

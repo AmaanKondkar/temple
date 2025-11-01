@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitthal–Rakhumai Temple Footer</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #0a0a0a;
+    color: #fff;
+  }
+
+  footer {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(120deg, #111, #1a1a1a);
+    padding: 80px 20px 60px;
+    color: #fff;
+  }
+
+  /* Floating Balls Animation */
+  .ball {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 102, 0, 0.15);
+    animation: floatBall linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes floatBall {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(180px, -150px) scale(1.25); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
+
+  /* Footer Container */
+  .footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .footer-section {
+    flex: 1 1 250px;
+    min-width: 230px;
+  }
+
+  .footer-section h4 {
+    font-size: 22px;
+    margin-bottom: 18px;
+    color: #ff6600;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .footer-section p, .footer-section a {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer-section a:hover {
+    color: #fff;
+    letter-spacing: 1px;
+    background: rgba(255, 102, 0, 0.15);
+    padding: 5px 8px;
+    border-radius: 6px;
+  }
+
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-section ul li {
+    margin-bottom: 10px;
+  }
+
+  .footer-section ul li i {
+    margin-right: 10px;
+    color: #ff6600;
+  }
+
+  /* Logo */
+  .footer-logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .big-logo {
+    width: 250px;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  /* Social Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+    background: #222;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 20px;
+  }
+
+  .social-icons a:hover {
+    background: #ff6600;
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
+  }
+
+  /* Newsletter */
+  .newsletter {
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .newsletter h4 {
+    color: #ff6600;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .newsletter p {
+    font-size: 14px;
+    color: #ccc;
+    margin-bottom: 15px;
+  }
+
+  .newsletter input[type="email"] {
+    padding: 12px 20px;
+    width: 250px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+  }
+
+  .newsletter button {
+    padding: 12px 20px;
+    border: none;
+    background: #ff6600;
+    color: #fff;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .newsletter button:hover {
+    background: #ee5500;
+    transform: scale(1.05);
+  }
+
+  /* Bottom Message */
+  .temple-message {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 15px;
+    color: #ffb27a;
+    letter-spacing: 0.5px;
+  }
+
+  /* Legal */
+  .footer-legal {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #888;
+  }
+
+  .footer-legal a {
+    color: #ff6600;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .footer-legal a:hover {
+    color: #fff;
+  }
+
+  /* Responsive */
+  @media(max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer-logo, .big-logo {
+      margin: auto;
+    }
+
+    .social-icons {
+      justify-content: center;
+    }
+
+    .newsletter input[type="email"] {
+      width: 70%;
+      border-radius: 25px;
+      margin-bottom: 10px;
+    }
+
+    .newsletter button {
+      width: 50%;
+      border-radius: 25px;
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<footer>
+  <!-- Animated Balls (Faster + 2 extra bottom balls) -->
+  <div class="ball" style="width: 220px; height: 220px; top: -60px; left: -40px; animation-duration: 15s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; top: 120px; left: 70%; animation-duration: 18s;"></div>
+  <div class="ball" style="width: 250px; height: 250px; top: 250px; left: 30%; animation-duration: 20s;"></div>
+  <div class="ball" style="width: 180px; height: 180px; bottom: 60px; left: 20%; animation-duration: 17s;"></div>
+  <div class="ball" style="width: 200px; height: 200px; bottom: 40px; left: 75%; animation-duration: 19s;"></div>
+
+  <div class="footer-container">
+    
+    <!-- Logo & Contact Info -->
+    <div class="footer-section">
+      <img src="logo.png" alt="Vitthal–Rakhumai Temple Logo" class="footer-logo">
+      
+      <h4>Contact Us</h4>
+      <p><i class="fas fa-map-marker-alt"></i> ABC Village, Pune, Maharashtra</p>
+      <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fas fa-envelope"></i> temple@vitthalrakhumai.org</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#"><i class="fas fa-info-circle"></i>About</a></li>
+        <li><a href="#"><i class="fas fa-image"></i>Gallery</a></li>
+        <li><a href="#"><i class="fas fa-calendar-alt"></i>Events</a></li>
+        <li><a href="#"><i class="fas fa-hand-holding-heart"></i>Donation</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i>Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-section">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Newsletter -->
+  <div class="newsletter">
+    <h4>Subscribe to Newsletter</h4>
+    <p>Get the latest updates and offers.</p>
+    <input type="email" placeholder="Enter your email">
+    <button>Subscribe</button>
+  </div>
+
+  <div class="temple-message">
+    “Spreading devotion, peace, and blessings from Vitthal–Rakhumai Temple, ABC Village.”
+  </div>
+
+  <!-- Legal -->
+  <div class="footer-legal">
+    <p>© 2025 Vitthal–Rakhumai Temple. All rights reserved. | 
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms of Service</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

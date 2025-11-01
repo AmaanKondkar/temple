@@ -1,0 +1,147 @@
+#templeCountersSection {
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Counter & Donation Circle Box */
+#templeCountersSection .counter,
+#templeCountersSection .donation-progress {
+  background: #fff;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+#templeCountersSection .counter:hover,
+#templeCountersSection .donation-progress:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+}
+
+/* Counter Text */
+.counter span {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.counter h2 {
+  font-size: 1.6rem;
+  color: #ff4d6d;
+  margin: 0;
+}
+
+.counter p {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333;
+  margin: 5px 0 0;
+}
+
+/* Donation Progress Ring */
+.donation-progress svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+
+.progress-ring .bg {
+  stroke: #eee;
+}
+
+.progress-ring .progress {
+  stroke: #ff4d6d;
+  transition: stroke-dashoffset 1s ease;
+}
+
+/* Centered Donation Text */
+.progress-text {
+  text-align: center;
+  z-index: 2;
+  color: #333;
+}
+
+.progress-text span {
+  font-size: 1.5rem;
+}
+
+.progress-text h3 {
+  margin: 5px 0 0;
+  color: #ff4d6d;
+  font-size: 1rem;
+}
+
+.progress-text p {
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 0;
+  color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .counter,
+  .donation-progress {
+    width: 160px;
+    height: 160px;
+  }
+
+  .donation-progress svg {
+    width: 110px;
+    height: 110px;
+  }
+
+  .progress-text h3 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #templeCountersSection {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .counter,
+  .donation-progress {
+    width: 140px;
+    height: 140px;
+  }
+
+  .donation-progress svg {
+    width: 95px;
+    height: 95px;
+  }
+
+  .counter h2 {
+    font-size: 1.1rem;
+  }
+
+  .counter p,
+  .progress-text p {
+    font-size: 0.75rem;
+  }
+}
